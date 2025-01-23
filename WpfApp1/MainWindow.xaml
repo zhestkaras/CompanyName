@@ -6,6 +6,14 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="Pink">
+            <Setter Property ="Control.HorizontalAlignment" Value="Center"/>
+            <Setter Property ="Control.VerticalAlignment" Value="Center"/>
+            <Setter Property="Control.FontSize" Value="15"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -17,51 +25,106 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-          
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
 
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
-            
+
         </Grid.ColumnDefinitions>
         <Rectangle Fill="LightBlue" Grid.ColumnSpan="2" Grid.RowSpan="2" Panel.ZIndex="-1"/>
         <Label   Grid.Row="0" HorizontalAlignment="Left" FontSize="33" VerticalAlignment="Center" Content="Company Name"/>
-        
+
         <StackPanel Grid.Column="0"  Grid.Row="3"  >
-            <Label Content = "Phone Number"/>
-            <TextBox FontSize="15" x:Name="text1" Text="" Margin="0,0,15,0" />
+            <Label Content = "Phone Number" Margin="20,0,15,0" />
+            <TextBox FontSize="15" x:Name="text1" Text="" Margin="20,0,20,0" />
         </StackPanel>
-        
+
         <StackPanel Grid.Column="1"  Grid.Row="3"  >
-            <Label Content="Phone Number" Width="368"/>
-            <TextBox FontSize="15" x:Name="text2" Text="" Margin="15,0,0,0" />
+            <Label Content="Phone Number" Margin="15,0,15,0" />
+            <TextBox FontSize="15" x:Name="text2" Text="" Margin="15,0,20,0" />
         </StackPanel>
-        
+
         <StackPanel Grid.Column="0"  Grid.Row="2"  >
-            <Label Content="Customer Number" Margin="0,0,15,0"/>
-            <TextBox FontSize="15" x:Name="text4" Text="" Margin="0,0,15,0" />
+            <Label Content="Customer Number" Margin="20,0,15,0"/>
+            <TextBox FontSize="15" x:Name="text4" Text="" Margin="20,0,20,0" />
         </StackPanel>
-        
+
         <StackPanel Grid.Column="2"  Grid.Row="2"  >
             <Label Content="Associate" Margin="0,0,15,0" Width="355"/>
-            <TextBox FontSize="15" x:Name="text0" Text="" Margin="15,0,0,0" />
+            <TextBox FontSize="15" x:Name="text0" Text="" Margin="15,0,20,0" />
         </StackPanel>
-        
+
         <StackPanel Grid.Column="0"  Grid.Row="4"  >
-            <Label Content="Address" Margin="0,0,15,0" Width="355"/>
-            <TextBox FontSize="15" x:Name="text5" Text="" Margin="15,0,0,0" />
-            
+            <Label Content="Address" Margin="15,0,20,0" Width="355"/>
+            <TextBox FontSize="15" x:Name="text5" Text="" Margin="20,0,20,0" />
+
         </StackPanel>
         <StackPanel Grid.Column="0"  Grid.Row="5"  >
-            
-            <TextBox FontSize="15" x:Name="text6" Text="" Margin="15,15,0,0" />
+
+            <TextBox FontSize="15" x:Name="text6" Text="" Margin="20,15,20,0" />
 
         </StackPanel>
 
+        <StackPanel Grid.Column="0"  Grid.Row="6"  >
+
+            <TextBox FontSize="15" x:Name="text8" Text="City" Margin="20,15,200,0" />
+
+        </StackPanel>
+        <StackPanel Grid.Column="0"  Grid.Row="7"  >
+
+            <TextBox FontSize="15" x:Name="text9" Text="Zip Code" Margin="20,0,250,0" />
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1"  Grid.Row="4"  >
+            <Label Content = "Target Install Date" Margin="20,0,15,0"  />
+            <DatePicker Margin="20,0,100,0"  IsDropDownOpen="True" SelectedDateFormat="Short"/>
+        </StackPanel>
+
+        <ComboBox  Grid.Column="1"  Grid.Row="6" Margin="20,10,300,10">
+
+            <TextBlock>1</TextBlock>
+            <TextBlock>2</TextBlock>
+            <TextBlock>3</TextBlock>
+            <TextBlock>4</TextBlock>
+            <TextBlock>5</TextBlock>
+            <TextBlock>6</TextBlock>
+            <TextBlock>7</TextBlock>
+            <TextBlock>8</TextBlock>
+            <TextBlock>9</TextBlock>
+            <TextBlock>10</TextBlock>
+            <TextBlock>11</TextBlock>
+            <TextBlock>12</TextBlock>
+        </ComboBox>
+        <ComboBox  Grid.Column="1"  Grid.Row="6" Margin="100,10,200,10">
+
+            <TextBlock>1</TextBlock>
+            <TextBlock>2</TextBlock>
+            <TextBlock>3</TextBlock>
+            <TextBlock>4</TextBlock>
+            <TextBlock>5</TextBlock>
+            <TextBlock>6</TextBlock>
+            <TextBlock>7</TextBlock>
+            <TextBlock>8</TextBlock>
+            <TextBlock>9</TextBlock>
+            <TextBlock>10</TextBlock>
+            <TextBlock>11</TextBlock>
+            <TextBlock>12</TextBlock>
+        </ComboBox>
+        <ComboBox  Grid.Column="0"  Grid.Row="6" Margin="250,15,100,10">
+
+            <TextBlock>State</TextBlock>
+        </ComboBox>
+        <ComboBox  Grid.Column="1"  Grid.Row="6" Margin="200,10,100,10">
+
+            <TextBlock>AM</TextBlock>
+            <TextBlock>PM</TextBlock>
+        </ComboBox>
         <Grid Grid.Row=" 1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-               
+
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
@@ -74,16 +137,16 @@
                 <ColumnDefinition Width="1*"/>
 
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center">Orders</Label>
-            <Label Grid.Column="1" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Customers</Label>
-            <Label Grid.Column="2" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center">Invoices</Label>
-            <Label Grid.Column="3" HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center">Stock</Label>
+            <Label Grid.Column="0" Style="{StaticResource Pink}">Orders</Label>
+            <Label Grid.Column="1" Style="{StaticResource Pink}">Customers</Label>
+            <Label Grid.Column="2" Style="{StaticResource Pink}">Invoices</Label>
+            <Label Grid.Column="3" Style="{StaticResource Pink}">Stock</Label>
             <Label Grid.Column="4"></Label>
-            <Label Grid.Column="5" HorizontalAlignment="Center" FontSize="30" VerticalAlignment="Center">+</Label>
-            <Label Grid.Column="6" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center">✎</Label>
-            <Label Grid.Column="7" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" >🗑️</Label>
-            <Label Grid.Column="8" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center">🖨️</Label>
-            <Label Grid.Column="9" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center">...</Label>
+            <Label Grid.Column="5" Style="{StaticResource Pink}">+</Label>
+            <Label Grid.Column="6" Style="{StaticResource Pink}">✎</Label>
+            <Label Grid.Column="7" Style="{StaticResource Pink}" >🗑️</Label>
+            <Label Grid.Column="8" Style="{StaticResource Pink}">🖨️</Label>
+            <Label Grid.Column="9" Style="{StaticResource Pink}">...</Label>
 
         </Grid>
 
